@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <unistd.h>
+
 /**
- * main - Enty poit
+ * main - print quote
  *
- * Return: Always 1 (success)
+ * Description: prints Dors's quote
+ *
+ * Return: Always 1 (Success)
  */
+
 
 int main(void)
 {
