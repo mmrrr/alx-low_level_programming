@@ -1,14 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * main - Enter point
- *
- * Return: Always 0 (success)
-*/
+ * main - main block
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: 0
+ */
 int main(void)
 {
+	char c = 'a';
 
-	char a = 'a';
-	for (int a = 0; a <= 'z'; a++)
-		putchar(a);
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
+
+	putchar('\n');
 	return (0);
 }
