@@ -1,4 +1,4 @@
-o/*
+/*
  * 0x0F. C - Function pointers
  * task 3
  */
