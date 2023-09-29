@@ -1,52 +1,30 @@
-/*
- *  * 0x14. C - Bit manipulation
- *   * task 0
- *    */
 #include "main.h"
-#include <string.h>
-/*prototypes*/
-unsigned int _pow(int base, int pow);
+#include <stdio.h>
+
 /**
- *  * binary_to_uint - converts a binary number to an unsigned int.
- *   * @b: binary number array pointer.
- *    * Return: converted number, or 0.
+ *  * binary_to_uint - convert a binary number to an unsigned int
+ *   * @b: char string
+ *    * Return: converted decimal number or 0 if there is an unconvertable char
  *     */
 unsigned int binary_to_uint(const char *b)
 {
-		unsigned int dismal, len, i;
+		unsigned int total, power;
+			int len;
 
-			dismal = 0;
-				i = 0;
-					if (!b)
-								return (0);
+				if (b == NULL)
+							return (0);
 
-						len = strlen(b);
-							while (b[i])
-									{
-												if (!(b[i] == '0' ||  b[i] == '1'))
-																return (0);
-														dismal = dismal + (b[i] - '0') * _pow(2, len - i - 1);
-																i++;
-																	}
-								return (dismal);
-}
-/**
- *  * _pow - calculate power
- *   * @base: base
- *    * @pow: power
- *     * Return: result
- *      */
-unsigned int _pow(int base, int pow)
-{
-		unsigned int result;
+					for (len = 0; b[len]; len++)
+							{
+										if (b[len] != '0' && b[len] != '1')
+														return (0);
+											}
 
-			if (pow == 0)
-						return (1);
+						for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
+								{
+											if (b[len] == '1')
+															total += power;
+												}
 
-				if (pow == 1)
-							return (base);
-					result = base;
-						while (--pow)
-									result *= base;
-							return (result);
+							return (total);
 }
